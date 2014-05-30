@@ -39,3 +39,7 @@ data out.screenedsites (keep=study_id facilitycode redcap_data_access_group proj
 				else ineliLanguage=0; /*ineligible-language barrier*/
 		if inex_exc10=1 OR v2_inex_exc10=1 then ineliFollowup=1;
 				else ineliFollowup=0; /*ineligible-issues with followup*/
+		if language=1 OR followup=1 then ineliOther=1;
+				else ineliOther=0; /*ineligible-other (group others here as necessary)*/
+		end;
+	end;
