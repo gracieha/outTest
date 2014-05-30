@@ -34,4 +34,6 @@ data out.screenedsites (keep=study_id facilitycode redcap_data_access_group proj
 		if inex_exc07=1 OR v2_inex_exc07=1 then ineliPriorAmp=1;
 				else ineliPriorAmp=0; /*Ineligible-prior amputation*/
 		if inex_exc08=1 OR v2_inex_exc08=1 then ineliBurns=1;
-				else ineliBurns=0; /*Ineliggible-third-degree burns*/
+				else ineliBurns=0; /*Ineligible-third-degree burns*/
+		if inex_exc09=1 OR v2_inex_exc09=1 then ineliLanguage=1;
+				else ineliLanguage=0; /*ineligible-language barrier*/
