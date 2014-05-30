@@ -31,3 +31,5 @@ data out.screenedsites (keep=study_id facilitycode redcap_data_access_group proj
 				else ineliGCSs=0; /*Ineligible-GCS*/
 		if inex_exc05=1 OR inex_exc06=1 OR v2_inex_exc05=1 OR v2_inex_exc06=1 then ineliNonamb=1;
 				else ineliNonamb=0; /*Ineligible-Nonambulatory*/
+		if inex_exc07=1 OR v2_inex_exc07=1 then ineliPriorAmp=1;
+				else ineliPriorAmp=0; /*Ineligible-prior amputation*/
