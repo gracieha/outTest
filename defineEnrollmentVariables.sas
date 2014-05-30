@@ -27,3 +27,5 @@ data out.screenedsites (keep=study_id facilitycode redcap_data_access_group proj
 				else ineliAge=0;
 		if (inex_inc02=0 OR inex_inc02n___8=1) OR (v2_inex_inc02=0 OR v2_inex_inc02n___8=1) OR (v3_inex_inc02n___8=1) then ineliInjury=1;
 				else ineliInjury=0;
+		if inex_exc04=1 then ineliGCS=1;
+				else ineliGCSs=0;
