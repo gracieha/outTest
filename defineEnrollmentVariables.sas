@@ -24,8 +24,10 @@ data out.screenedsites (keep=study_id facilitycode redcap_data_access_group proj
 	/*Quarterly-Ineligible by reason (QT3)*/
 	if ineligible=1 then do;
 		if inex_inc01=0 OR v2_inex_inc01=0 then ineliAge=1;
-				else ineliAge=0;
+				else ineliAge=0; /*Ineligible-Age*/
 		if (inex_inc02=0 OR inex_inc02n___8=1) OR (v2_inex_inc02=0 OR v2_inex_inc02n___8=1) OR (v3_inex_inc02n___8=1) then ineliInjury=1;
-				else ineliInjury=0;
+				else ineliInjury=0; /*Ineligible-Injury*/
 		if inex_exc04=1 then ineliGCS=1;
-				else ineliGCSs=0;
+				else ineliGCSs=0; /*Ineligible-GCS*/
+		if inex_exc05=1 OR inex_exc06=1 OR v2_inex_exc05=1 OR v2_inex_exc06=1 then ineliNonamb=1;
+				else ineliNonamb=0; /*Ineligible-Nonambulatory*/
