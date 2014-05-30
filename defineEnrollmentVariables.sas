@@ -8,3 +8,5 @@ data out.screenedsites;
 	if redcap_event_name='baseline_arm_1' AND crf00_complete=2 then do;
 		if crf00_complete=2 then screened=1;
 		if /*inex_con12=1 OR*/ inex_con12spy=1 OR v2_inex_con12spy=1 OR v3_inex_con12spy=1 then eligible=1;
+		if (inex_con12spn=1 OR v2_inex_con12spn=1 OR v3_inex_con12spn=1) OR (.<inex_inc_calc<3 OR .<v2_inex_inc_calc<3)
+			then ineligible=1;
