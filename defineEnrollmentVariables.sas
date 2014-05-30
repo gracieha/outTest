@@ -10,3 +10,6 @@ data out.screenedsites;
 		if /*inex_con12=1 OR*/ inex_con12spy=1 OR v2_inex_con12spy=1 OR v3_inex_con12spy=1 then eligible=1;
 		if (inex_con12spn=1 OR v2_inex_con12spn=1 OR v3_inex_con12spn=1) OR (.<inex_inc_calc<3 OR .<v2_inex_inc_calc<3)
 			then ineligible=1;
+
+		if eligible=1 then do;
+			if treat_assign=1 then enrolled=1;
