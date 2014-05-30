@@ -7,3 +7,4 @@ data out.screenedsites;
 	/*Monthly Variables-Screen/Enrollment Summary (MT0), MT1, MT2, Enrollment Updates*/
 	if redcap_event_name='baseline_arm_1' AND crf00_complete=2 then do;
 		if crf00_complete=2 then screened=1;
+		if /*inex_con12=1 OR*/ inex_con12spy=1 OR v2_inex_con12spy=1 OR v3_inex_con12spy=1 then eligible=1;
