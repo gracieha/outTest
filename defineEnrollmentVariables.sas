@@ -13,3 +13,4 @@ data out.screenedsites;
 
 		if eligible=1 then do;
 			if treat_assign=1 then enrolled=1;
+			if inex_con15=0 /*and inex_con16 ne .*/ then notEnrolledRefused=1;
