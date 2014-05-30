@@ -14,3 +14,7 @@ data out.screenedsites;
 		if eligible=1 then do;
 			if treat_assign=1 then enrolled=1;
 			if inex_con15=0 /*and inex_con16 ne .*/ then notEnrolledRefused=1;
+			if inex_elac_this_study in (2,3) then notEnrolledStudy=1;
+			if inex_con15=2 then notEnrolledConsentNA=1;
+			if (enrolled ne 1 AND notEnrolledRefused ne 1) OR (inex_elac_this_study in (2,3,4) OR notEnrolledConsentNA=1 OR notEnrolledStudy=1) then notEnrolledother=1;
+		end;
