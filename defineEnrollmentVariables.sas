@@ -21,3 +21,7 @@ data out.screenedsites (keep=study_id facilitycode redcap_data_access_group proj
 	end;
 	if fsf_study_completed=1 then completePatient=1; /*Monthly/Quarterly*/
 	if enrolled AND fsf_study_completed not in (1,2) then activePatient=1; /*Quarterly*/
+	/*Quarterly-Ineligible by reason (QT3)*/
+	if ineligible=1 then do;
+			if inex_inc01=0 OR v2_inex_inc01=0 then ineliAge=1;
+				else ineliAge=0;
